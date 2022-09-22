@@ -15,6 +15,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.7",
     "redux": "^4.2.0",
+    "reduxjs-toolkit-persist": "^7.2.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },

@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
 
-import store from './store';
+import { store } from './store';
 import GlobalStyles from './styles/globalStyles';
 
 function App() {

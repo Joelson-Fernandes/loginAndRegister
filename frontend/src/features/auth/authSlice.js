@@ -13,6 +13,7 @@ export const authUser = createAsyncThunk('auth/user', async (userData) => {
 
 const initialState = {
   user: {},
+  token: false,
   isLoggedIn: false,
   isLoading: false,
 };
@@ -33,7 +34,12 @@ export const authSlice = createSlice({
     builder.addCase(authLogin.fulfilled, (state, action) => {
       state.isLoading = false;
       if (action.payload.errors) toast.error(action.payload.errors[0]);
-      if (action.payload.email) state.isLoggedIn = true;
+      if (action.payload.token) {
+        state.isLoggedIn = true;
+        state.token = action.payload.token;
+        state.user = action.payload;
+        console.log(state.user);
+      }
     });
     builder.addCase(authLogin.rejected, (state) => {
       state.isLoading = false;
