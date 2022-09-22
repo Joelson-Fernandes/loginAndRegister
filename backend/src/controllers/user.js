@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 import User from '../models/user';
 
 class UserControler {
@@ -44,8 +45,11 @@ class UserControler {
       }
 
       const { nome, _id } = user;
+      const token = jwt.sign({ _id, email }, process.env.TOKEN_SECRET, {
+        expiresIn: process.env.TOKEN_EXPIRATION,
+      });
 
-      return res.status(200).json({ _id, nome, email });
+      return res.status(200).json({ _id, nome, email, token });
     } catch (e) {
       return res.status(400).json('erro');
     }
