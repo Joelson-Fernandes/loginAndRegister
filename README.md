@@ -29,7 +29,7 @@ TOKEN_EXPIRATION=7d
 Execute o comando no diretório raiz:
 ```
 npm install
-npm run dev
+npm start
 ```
 Back-end devera estar rodando em <a href="http://localhost:3001">http://localhost:3001</a>
 
